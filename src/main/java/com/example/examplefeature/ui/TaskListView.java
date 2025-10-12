@@ -1,5 +1,6 @@
 package com.example.examplefeature.ui;
 
+import com.example.base.ui.MainLayout;
 import com.example.base.ui.component.ViewToolbar;
 import com.example.examplefeature.Task;
 import com.example.examplefeature.TaskService;
@@ -23,7 +24,7 @@ import java.util.Optional;
 
 import static com.vaadin.flow.spring.data.VaadinSpringDataHelpers.toSpringPageRequest;
 
-@Route("")
+@Route(value = "", layout = MainLayout.class)
 @PageTitle("Task List")
 @Menu(order = 0, icon = "vaadin:clipboard-check", title = "Task List")
 class TaskListView extends Main {
