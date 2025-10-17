@@ -54,32 +54,6 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-mail</artifactId>
-        </dependency>
-        <!-- JavaMoney API (JSR-354) -->
-        <dependency>
-            <groupId>javax.money</groupId>
-            <artifactId>money-api</artifactId>
-            <version>1.1</version>
-        </dependency>
-
-        <!-- Moneta implementation (core) -->
-        <dependency>
-            <groupId>org.javamoney</groupId>
-            <artifactId>moneta</artifactId>
-            <version>1.4.2</version> <!-- latest stable available -->
-        </dependency>
-
-        <!-- Optional: IMF currency converter provider -->
-        <dependency>
-            <groupId>org.javamoney.moneta</groupId>
-            <artifactId>moneta-convert-imf</artifactId>
-            <version>1.4.2</version>
-        </dependency>
-
-        <!-- ZXing for QR code generation -->
-        <dependency>
             <groupId>com.google.zxing</groupId>
             <artifactId>core</artifactId>
             <version>3.5.1</version>
@@ -163,7 +137,6 @@
             <url>https://maven.vaadin.com/vaadin-prereleases</url>
         </repository>
     </repositories>
-
     <pluginRepositories>
         <pluginRepository>
             <id>central</id>

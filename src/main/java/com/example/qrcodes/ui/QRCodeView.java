@@ -8,7 +8,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 
-@Route("") // root route
+@Route("qr-code")
 public class QRCodeView extends VerticalLayout {
 
     public QRCodeView() {
