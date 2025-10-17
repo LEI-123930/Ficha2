@@ -84,3 +84,39 @@ The [Getting Started](https://vaadin.com/docs/latest/getting-started) guide will
 App implementation. You'll learn how to set up your development environment, understand the project 
 structure, and find resources to help you add muscles to your skeleton — transforming it into a fully-featured 
 application.
+
+## Pipeline de Build com GitHub Actions
+
+Criamos um workflow que:
+
+- É desencadeado sempre que há push para a branch principal (`main`).
+- Configura Java 21 usando `actions/setup-java`.
+- Executa `mvn clean package` para gerar o `.jar`.
+- Publica o ficheiro `.jar` como artefacto do workflow usando `actions/upload-artifact`.
+- Opcionalmente, copia o `.jar` para a raiz do repositório.
+
+Exemplo do ficheiro `.github/workflows/build.yml`:
+
+```yaml
+name: Java Maven Build
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+      - run: mvn clean package
+      - run: cp target/*.jar .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: my-app-jar
+          path: target/*.jar
+
