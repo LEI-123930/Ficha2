@@ -6,12 +6,12 @@
     <artifactId>app</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    
+
     <properties>
         <java.version>21</java.version>
         <vaadin.version>24.9.2</vaadin.version>
     </properties>
-    
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -29,7 +29,7 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-    
+
     <dependencies>
         <dependency>
             <groupId>com.vaadin</groupId>
@@ -56,6 +56,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
         <!-- JavaMoney API (JSR-354) -->
         <dependency>
             <groupId>javax.money</groupId>
@@ -76,8 +77,20 @@
             <artifactId>moneta-convert-imf</artifactId>
             <version>1.4.2</version>
         </dependency>
+
+        <!-- ZXing for QR code generation -->
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>core</artifactId>
+            <version>3.5.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>javase</artifactId>
+            <version>3.5.1</version>
+        </dependency>
     </dependencies>
-    
+
     <build>
         <defaultGoal>spring-boot:run</defaultGoal>
         <plugins>
@@ -99,7 +112,7 @@
             </plugin>
         </plugins>
     </build>
-    
+
     <profiles>
         <profile>
             <id>production</id>
@@ -152,6 +165,10 @@
     </repositories>
 
     <pluginRepositories>
+        <pluginRepository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </pluginRepository>
         <pluginRepository>
             <id>vaadin-prereleases</id>
             <url>https://maven.vaadin.com/vaadin-prereleases</url>
