@@ -37,9 +37,6 @@ public final class MainLayout extends AppLayout {
         var nav = new SideNav();
         nav.addClassNames(Margin.Horizontal.MEDIUM);
 
-        // Add QRCodeView route to the SideNav
-        nav.addItem(new SideNavItem("QR Code Generator", "qr-code"));
-
         MenuConfiguration.getMenuEntries().forEach(entry -> nav.addItem(createSideNavItem(entry)));
         return nav;
     }
