@@ -6,9 +6,13 @@ import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.router.Menu;
+import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
 @Route("qr-code")
+@PageTitle("QR Code")
+@Menu(order = 3, icon = "vaadin:qrcode", title = "QR Code")
 public class QRCodeView extends VerticalLayout {
 
     public QRCodeView() {
