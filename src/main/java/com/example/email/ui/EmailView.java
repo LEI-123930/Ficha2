@@ -1,7 +1,7 @@
-package com.example.email.emailfeature.ui;
+package com.example.email.ui;
 
 import com.example.base.ui.MainLayout;
-import com.example.email.emailfeature.EmailService;
+import com.example.email.EmailService;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.html.H2;
